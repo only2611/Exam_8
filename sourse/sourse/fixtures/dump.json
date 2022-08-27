@@ -1,0 +1,75 @@
+[
+{
+    "model": "review.product",
+    "pk": 1,
+    "fields": {
+        "name": "milk",
+        "category": "food",
+        "description": "milk is milk",
+        "picture": "avatars/unnamed_WvKTItH.png"
+    }
+},
+{
+    "model": "review.product",
+    "pk": 2,
+    "fields": {
+        "name": "baloon",
+        "category": "toys",
+        "description": "baloon",
+        "picture": ""
+    }
+},
+{
+    "model": "review.product",
+    "pk": 3,
+    "fields": {
+        "name": "polo",
+        "category": "other",
+        "description": "t-shirt",
+        "picture": ""
+    }
+},
+{
+    "model": "review.product",
+    "pk": 4,
+    "fields": {
+        "name": "cat",
+        "category": "toys",
+        "description": "toys",
+        "picture": ""
+    }
+},
+{
+    "model": "review.product",
+    "pk": 5,
+    "fields": {
+        "name": "car",
+        "category": "tech",
+        "description": "car",
+        "picture": ""
+    }
+},
+{
+    "model": "review.product",
+    "pk": 6,
+    "fields": {
+        "name": "scissors",
+        "category": "tools",
+        "description": "scissors",
+        "picture": ""
+    }
+},
+{
+    "model": "review.recall",
+    "pk": 1,
+    "fields": {
+        "created_at": "2022-08-27T07:14:36.715Z",
+        "updated_at": "2022-08-27T07:14:36.715Z",
+        "author": 1,
+        "product": 2,
+        "sms": "good price",
+        "rate": 5,
+        "moderate": false
+    }
+}
+]

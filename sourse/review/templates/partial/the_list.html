@@ -1,0 +1,22 @@
+<h2>Товары</h2>
+    <div class="row">
+        {% for product in products %}
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h3>{{ product.name }} ({{ product.description}})</h3>
+{#                        {% if perms.trecker.view_project and user in project.users.all %}#}
+                        <p><a href="{{ product.get_absolute_url }}">Подробнее о товаре</a></p>
+{#                            <p><a href="{% url "trecker:add_user" project.pk %}">add/delete user</a></p>#}
+{#                        {% endif %}#}
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    {% if is_paginated %}
+        {% include "partial/pagination.html" %}
+    {% endif %}
+    </div>
+    <p></p>
+
+

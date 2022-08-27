@@ -30,5 +30,3 @@ class RecallAdmin(admin.ModelAdmin):
 
 admin.site.register(Recall, RecallAdmin)
 
-
-
