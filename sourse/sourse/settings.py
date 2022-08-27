@@ -122,8 +122,8 @@ STATIC_URL = 'static/'
 
 
 LOGIN_URL = "accounts:login"
-LOGOUT_REDIRECT_URL = "review:index-view"
-LOGIN_REDIRECT_URL = "review:index-view"
+LOGOUT_REDIRECT_URL = "review:index_view"
+LOGIN_REDIRECT_URL = "review:index_view"
 
 
 

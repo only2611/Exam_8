@@ -126,7 +126,7 @@ class ChangePasswordView(UpdateView):
 
 
     def form_valid(self, form):
-        result = super().form_valid()
+        result = super().form_valid(form)
         update_session_auth_hash(self.request, self.object)
         return result
 

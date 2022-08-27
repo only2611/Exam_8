@@ -104,8 +104,8 @@ class ProductView(PermissionRequiredMixin, DetailView):
     model = Product
     permission_required = "review.view_project"
 
-    def has_permission(self):
-        return super().has_permission() or self.request.user in self.get_object().users.all()
+    # def has_permission(self):
+    #     return super().has_permission() or self.request.user in self.get_object().users.all()
 #
 #
 #
