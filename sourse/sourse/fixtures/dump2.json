@@ -1,0 +1,95 @@
+[
+{
+    "model": "review.product",
+    "pk": 1,
+    "fields": {
+        "name": "milk",
+        "category": "food",
+        "description": "milk is milka",
+        "picture": "avatars/unnamed_WvKTItH.png"
+    }
+},
+{
+    "model": "review.product",
+    "pk": 3,
+    "fields": {
+        "name": "polo",
+        "category": "tools",
+        "description": "t-shirt",
+        "picture": ""
+    }
+},
+{
+    "model": "review.product",
+    "pk": 5,
+    "fields": {
+        "name": "car",
+        "category": "tech",
+        "description": "car",
+        "picture": ""
+    }
+},
+{
+    "model": "review.product",
+    "pk": 6,
+    "fields": {
+        "name": "scissors",
+        "category": "tech",
+        "description": "scissors",
+        "picture": ""
+    }
+},
+{
+    "model": "review.product",
+    "pk": 7,
+    "fields": {
+        "name": "saloon",
+        "category": "tools",
+        "description": "saloon",
+        "picture": ""
+    }
+},
+{
+    "model": "review.product",
+    "pk": 8,
+    "fields": {
+        "name": "baloon",
+        "category": "other",
+        "description": "",
+        "picture": ""
+    }
+},
+{
+    "model": "review.product",
+    "pk": 9,
+    "fields": {
+        "name": "ball",
+        "category": "other",
+        "description": "",
+        "picture": ""
+    }
+},
+{
+    "model": "review.product",
+    "pk": 10,
+    "fields": {
+        "name": "nba",
+        "category": "other",
+        "description": "nba",
+        "picture": ""
+    }
+},
+{
+    "model": "review.recall",
+    "pk": 2,
+    "fields": {
+        "created_at": "2022-08-27T12:43:03.562Z",
+        "updated_at": "2022-08-27T12:43:03.562Z",
+        "author": 1,
+        "product": 1,
+        "sms": "good  price",
+        "rate": 5,
+        "moderate": false
+    }
+}
+]
