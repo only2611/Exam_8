@@ -1,0 +1,32 @@
+{#{% extends "base.html" %}#}
+{#{% load static %}#}
+{#{% block nav %}#}
+{#{% if request.user.is_authenticated %}#}
+{#    <li class="nav-item">#}
+{#        <a class="nav-link" href="{% url "recall:create2" %}"><h3>Создание отзыва</h3></a>#}
+{#    </li>#}
+{#    {% endif %}#}
+{##}
+{#{% endblock %}#}
+{#{% block content %}#}
+{#    {% include "partial/search.html" %}#}
+{#    <h2>Отзывы</h2>#}
+{#    <div class="row">#}
+{#        {% for recall in recalls %}#}
+{#            <div class="col-12 col-md-6 col-lg-4">#}
+{#                <div class="card mb-3">#}
+{#                    <div class="card-body">#}
+{#                        <h3>{{ recallz.author }} ({{ recalls.product}})#}
+{#                        {{ recall.sms }} {{ recall.rate }}</h3>#}
+{#                        <p><a href="{% url "recall:r_view" product.pk%}">Подробнее об отзыве</a></p>#}
+{#                    </div>#}
+{#                </div>#}
+{#            </div>#}
+{#        {% endfor %}#}
+{#    {% if is_paginated %}#}
+{#        {% include "partial/pagination.html" %}#}
+{#    {% endif %}#}
+{#    </div>#}
+{#    <p></p>#}
+{#    <a href="{% url "review:index_view" %}">На главную товаров</a>#}
+{#{% endblock %}#}

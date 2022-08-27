@@ -47,7 +47,7 @@ class Product(models.Model):
 
 
 class Recall(BaseModel):
-    author = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, verbose_name="Автор", related_name="recallz")
+    author = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, verbose_name="Автор", related_name="recalls")
     product = models.ForeignKey("review.Product", on_delete=models.CASCADE, verbose_name="Товар", related_name="recalls")
     sms = models.TextField(max_length=500, verbose_name="Текст отзыва")
     rate = models.IntegerField(verbose_name='Оценка', default=5, validators=(MinValueValidator(1), MaxValueValidator(5),))

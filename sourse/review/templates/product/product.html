@@ -1,13 +1,13 @@
 {% extends "base.html" %}
 {% load static %}
 {% block nav %}
-{#    {% if request.user.is_authenticated  %}#}
-{#        <a class="nav-link" href="{% url "review:create-recall" product.pk%}">Создать отзыв</a>#}
-{#    {% endif %}#}
+    {% if request.user.is_authenticated  %}
+        <a class="nav-link" href="{% url "review:recall-create" product.pk%}">Создать отзыв</a>
+    {% endif %}
     {% if request.user.is_authenticated and perms.trecker.change_project and perms.trecker.delete_project%}
         <a class="nav-link" href="{% url "review:p-update" product.pk %}">Редактировать товар</a>
         <a class="nav-link" href="{% url "review:p-delete" product.pk %}">Удалить товар</a>
-{#        <a class="nav-link" href="{% url "trecker:add_user" project.pk %}">add/delete user</a>#}
+
     {% endif %}
 {% endblock %}
 {% block content %}
@@ -30,20 +30,20 @@
     </div>
 
     <p></p>
-{#<p><h3>Задачи по проекту: {{project.name}}</h3>#}
-{#    <div class="row">#}
-{#        {% for project in project.taskss.all %}#}
-{#            <div class="col-12 col-md-6 col-lg-4">#}
-{#                <div class="card mb-3">#}
-{#                    <div class="card-body">#}
-{#                        <h3>{{ project.summary }} ({{ project.description}})</h3>#}
-{#                        <p><a href="{% url "trecker:task_view" project.pk%}">Подробнее о задаче</a></p>#}
-{#                    </div>#}
-{#                </div>#}
-{#            </div>#}
-{#        {% endfor %}#}
-{#    </div>#}
-{#</p>#}
+<p><h3>Отзывы по товару: {{product.name}}</h3>
+    <div class="row">
+        {% for product in product.recalls.all %}
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="card mb-3">
+                    <div class="card-body">
+                        <h3>{{ product.sms }} ({{ product.rate}})</h3>
+                        <p><a href="{% url "review:recall-view" product.pk%}">Подробнее об отзыве</a></p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</p>
 
 <a href="{% url "review:index_view" %}">На главную товаров</a>
 {% endblock %}

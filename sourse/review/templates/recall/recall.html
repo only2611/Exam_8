@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block nav %}
+    {% if request.user.is_authenticated %}
+    <a class="nav-link" href="{% url "review:update" recall.pk %}">Update recall</a>
+    <a class="nav-link" href="{% url "review:delete" recall.pk %}">Delete recall</a>
+    {% endif %}
+{% endblock %}
+{% block content %}
+{#<p>project - {{ task.project.name }}</p>#}
+<p>name - {{ recall.author.name }}</p>
+<p>text - {{ recll.sms }}</p>
+<p>status - {{ recall.rate }}</p>
+
+    <p>data_of_create - {{ task.created_at }}</p>
+    <p>data_of_update - {{ task.updated_at }}</p>
+
+    <a href="{% url "review:index_view" %}">На главную товаров</a>
+{% endblock %}

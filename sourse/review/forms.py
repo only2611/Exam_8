@@ -1,6 +1,6 @@
 from django import forms
 
-from review.models import Product
+from review.models import Product, Recall
 
 
 class FindForm(forms.Form):
@@ -12,3 +12,11 @@ class ProductForm(forms.ModelForm):
     class Meta:
         model = Product
         fields = ['name', 'description', 'category', 'picture']
+
+
+
+class RecallForm(forms.ModelForm):
+    class Meta:
+        model = Recall
+        fields = ["sms", "rate", 'moderate']
+
