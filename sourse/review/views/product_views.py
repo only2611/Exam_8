@@ -76,60 +76,60 @@ class ProductsView(ListView):
 #         return reverse("trecker:project-view", kwargs={"pk": self.object.pk})
 #
 #
-class CreateProductView( CreateView):
+class CreateProductView(PermissionRequiredMixin, CreateView):
     form_class = ProductForm
     template_name = "product/new-product.html"
 
-    # permission_required = "trecker.add_project"
+    permission_required = "review.add_project"
 
     # def form_valid(self, form):
     #     user = self.request.user
     #     form.instance.author = user
     #     return super().form_valid(form)
 
-    # def form_valid(self, form):
-    #     response = super().form_valid(form)
-    #     self.object.users.add(self.request.user)
-    #     return response
+    def form_valid(self, form):
+        response = super().form_valid(form)
+        self.object.users.add(self.request.user)
+        return response
 
-    # def has_permission(self):
-    #     return super().has_permission() or self.get_object().author == self.request.user
+    def has_permission(self):
+        return super().has_permission() or self.get_object().author == self.request.user
 
     def get_success_url(self):
         return reverse("review:product-view", kwargs={"pk": self.object.pk})
 #
 #
-class ProductView( DetailView):
+class ProductView(PermissionRequiredMixin, DetailView):
     template_name = "product/product.html"
     model = Product
-    # permission_required = "trecker.view_project"
+    permission_required = "review.view_project"
 
-    # def has_permission(self):
-    #     return super().has_permission() or self.request.user in self.get_object().users.all()
+    def has_permission(self):
+        return super().has_permission() or self.request.user in self.get_object().users.all()
 #
 #
 #
 #
 #
-class UpdateProduct( UpdateView):
+class UpdateProduct(PermissionRequiredMixin, UpdateView):
     form_class = ProductForm
     template_name = "product/update_product.html"
     model = Product
-    # permission_required = "review.change_product"
+    permission_required = "review.change_product"
 
-    # def has_permission(self):
-    #     return super().has_permission() or self.get_object().users == self.request.user
+    def has_permission(self):
+        return super().has_permission() or self.get_object().users == self.request.user
 
 
     def get_success_url(self):
         return reverse("review:product-view", kwargs={"pk": self.object.pk})
 
 
-class DeleteProduct(DeleteView):
+class DeleteProduct(PermissionRequiredMixin, DeleteView):
     model = Product
     template_name = "product/delete.html"
     success_url = reverse_lazy("review:index_view")
-    # permission_required = "review.delete_product"
+    permission_required = "review.delete_product"
 
-    # def has_permission(self):
-    #     return super().has_permission() or self.get_object().users == self.request.user
+    def has_permission(self):
+        return super().has_permission() or self.get_object().users == self.request.user
