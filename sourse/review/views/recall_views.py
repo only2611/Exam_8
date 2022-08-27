@@ -50,7 +50,7 @@ class UpdateRecall(LoginRequiredMixin, UpdateView):
 
 
     def get_success_url(self):
-        return reverse("review:recall-view", kwargs={"pk": self.object.pk})
+        return reverse("review:recall-view", kwargs={"pk": self.object.recall.pk})
 
 
 
